@@ -6,6 +6,7 @@ export interface CTA {
   href: string;
   text: string;
   variant: "Normal" | "Reverse";
+  highlight?: boolean;
 }
 
 export interface Props {
@@ -84,7 +85,7 @@ export default function HeroFlats({
                 >
                   <span class="ease absolute right-0 -mt-12 h-32 w-8 translate-x-12 rotate-12 transform bg-white opacity-10 transition-all duration-1000 group-hover:-translate-x-40">
                   </span>
-                  <span class="relative font-medium lg:text-[20px]">
+                  <span class={`relative font-medium lg:text-[20px] ${item?.highlight ? "font-black" : ""}`}>
                     {item?.text}
                   </span>
                 </a>

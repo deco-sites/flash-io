@@ -7,6 +7,7 @@ import { useId } from "../../sdk/useId.ts";
 import type { ImageWidget } from "apps/admin/widgets.ts";
 
 export interface Testimonial {
+  itemTitle?: string;
   text?: string;
   image?: {
     src?: ImageWidget;
@@ -34,7 +35,8 @@ const DEFAULT_PROPS: Props = {
   "title": "",
   "description": "",
   "testimonials": [{
-    "text":
+    "itemTitle": "",
+    "text": 
       "Fashion Store is my go-to online destination for all things stylish. Their vast collection of trendy clothes and accessories never disappoints. The quality is exceptional, and the prices are affordable. The website is easy to navigate, and their customer service team is friendly and responsive. I always feel like a fashionista when I shop here!",
     "image": {
       "src":
@@ -48,6 +50,7 @@ const DEFAULT_PROPS: Props = {
       "company": "RJ Agency",
     },
   }, {
+    "itemTitle": "",
     "text":
       "I can't praise Fashion Store enough! Their commitment to staying ahead of the fashion curve is evident in their diverse and up-to-date inventory. Whether I need a casual outfit or a glamorous dress, they have it all. The shopping experience is seamless, and my orders always arrive promptly. Fashion Store is a true fashion lover's paradise!",
     "image": {
@@ -62,6 +65,7 @@ const DEFAULT_PROPS: Props = {
       "company": "MB & Co",
     },
   }, {
+    "itemTitle": "",
     "text":
       "Fashion Store has transformed my wardrobe. Their curated collection of clothing and accessories has helped me discover my personal style. The quality of their products is outstanding, and the prices are unbeatable. The website is visually appealing and easy to navigate. Fashion Store is my trusted companion for staying fashionable and feeling confident!",
     "image": {
@@ -82,7 +86,7 @@ const DEFAULT_PROPS: Props = {
   },
 };
 
-const Testimonal = ({ image, text, user }: Testimonial) => (
+const Testimonal = ({ itemTitle, image, text, user }: Testimonial) => (
   <div class="flex flex-col items-center gap-9 text-center">
     {image?.src && (
       <Image
@@ -92,6 +96,9 @@ const Testimonal = ({ image, text, user }: Testimonial) => (
         height={100}
       />
     )}
+    <h2 class="text-2xl lg:text-3xl">
+      {itemTitle}
+    </h2>
     <h3 class="text-xl lg:text-2xl">
       {text}
     </h3>
