@@ -36,7 +36,7 @@ const DEFAULT_PROPS: Props = {
   "description": "",
   "testimonials": [{
     "itemTitle": "",
-    "text": 
+    "text":
       "Fashion Store is my go-to online destination for all things stylish. Their vast collection of trendy clothes and accessories never disappoints. The quality is exceptional, and the prices are affordable. The website is easy to navigate, and their customer service team is friendly and responsive. I always feel like a fashionista when I shop here!",
     "image": {
       "src":
