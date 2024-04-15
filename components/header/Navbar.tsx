@@ -67,7 +67,7 @@ function Navbar(
 
   // Desktop header
   return (
-    <div class="hidden sm:grid sm:grid-cols-3 items-center border-b border-base-200 w-full px-6">
+    <div class="hidden sm:grid sm:grid-cols-3 items-center border-b border-t border-base-200 bg-secondary w-full px-6">
       <ul
         class={`flex gap-6 col-span-1 ${
           logoPosition === "left" ? "justify-center" : "justify-start"

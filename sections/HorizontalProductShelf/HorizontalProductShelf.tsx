@@ -12,7 +12,7 @@ export function LoadingFallback() {
       <div class="grid px-0 md:px-5 container">
         <ul class="carousel carousel-center sm:carousel-end sm:gap-1 row-start-2 row-end-5">
           <li class="carousel-item md:w-full w-full">
-            <div class="flex lg:flex-row sm:flex-col items-center lg:card card-compact group w-full text-start duration-500 transition-translate ease-in-out lg:hover:-translate-y-2">
+            <div class="flex lg:flex-row sm:flex-col items-center lg:card card-compact group w-full text-start duration-500 transition-translate ease-in-out lg:hover:-translate-y-2 bg-neutral-content p-6">
               <div class="relative overflow-hidden lg:mt-16">
                 <div class="grid grid-cols-1 grid-rows-1 w-full">
                   <div

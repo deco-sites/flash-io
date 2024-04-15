@@ -43,14 +43,14 @@ import * as $$$$$$27 from "./sections/HorizontalProductShelf/HorizontalProductSh
 import * as $$$$$$28 from "./sections/Images/BannerGrid.tsx";
 import * as $$$$$$29 from "./sections/Images/Carousel.tsx";
 import * as $$$$$$30 from "./sections/Images/ImageGallery.tsx";
-import * as $$$$$$31 from "./sections/Images/PartialImageGallery.tsx";
-import * as $$$$$$32 from "./sections/Images/ShoppableBanner.tsx";
-import * as $$$$$$33 from "./sections/Links/LinkTree.tsx";
-import * as $$$$$$34 from "./sections/Links/Shortcuts.tsx";
-import * as $$$$$$35 from "./sections/Miscellaneous/CampaignTimer.tsx";
-import * as $$$$$$36 from "./sections/Miscellaneous/CookieConsent.tsx";
-import * as $$$$$$37 from "./sections/Miscellaneous/Slide.tsx";
-import * as $$$$$$38 from "./sections/Newsletter/Newsletter.tsx";
+import * as $$$$$$31 from "./sections/Images/ShoppableBanner.tsx";
+import * as $$$$$$32 from "./sections/Links/LinkTree.tsx";
+import * as $$$$$$33 from "./sections/Links/Shortcuts.tsx";
+import * as $$$$$$34 from "./sections/Miscellaneous/CampaignTimer.tsx";
+import * as $$$$$$35 from "./sections/Miscellaneous/CookieConsent.tsx";
+import * as $$$$$$36 from "./sections/Miscellaneous/Slide.tsx";
+import * as $$$$$$37 from "./sections/Newsletter/Newsletter.tsx";
+import * as $$$$$$38 from "./sections/PartialImageGallery/PartialImageGallery.tsx";
 import * as $$$$$$39 from "./sections/Product/ImageGalleryFrontBack.tsx";
 import * as $$$$$$40 from "./sections/Product/NotFound.tsx";
 import * as $$$$$$41 from "./sections/Product/NotFoundChallenge.tsx";
@@ -111,14 +111,15 @@ const manifest = {
     "deco-sites/flash-io/sections/Images/BannerGrid.tsx": $$$$$$28,
     "deco-sites/flash-io/sections/Images/Carousel.tsx": $$$$$$29,
     "deco-sites/flash-io/sections/Images/ImageGallery.tsx": $$$$$$30,
-    "deco-sites/flash-io/sections/Images/PartialImageGallery.tsx": $$$$$$31,
-    "deco-sites/flash-io/sections/Images/ShoppableBanner.tsx": $$$$$$32,
-    "deco-sites/flash-io/sections/Links/LinkTree.tsx": $$$$$$33,
-    "deco-sites/flash-io/sections/Links/Shortcuts.tsx": $$$$$$34,
-    "deco-sites/flash-io/sections/Miscellaneous/CampaignTimer.tsx": $$$$$$35,
-    "deco-sites/flash-io/sections/Miscellaneous/CookieConsent.tsx": $$$$$$36,
-    "deco-sites/flash-io/sections/Miscellaneous/Slide.tsx": $$$$$$37,
-    "deco-sites/flash-io/sections/Newsletter/Newsletter.tsx": $$$$$$38,
+    "deco-sites/flash-io/sections/Images/ShoppableBanner.tsx": $$$$$$31,
+    "deco-sites/flash-io/sections/Links/LinkTree.tsx": $$$$$$32,
+    "deco-sites/flash-io/sections/Links/Shortcuts.tsx": $$$$$$33,
+    "deco-sites/flash-io/sections/Miscellaneous/CampaignTimer.tsx": $$$$$$34,
+    "deco-sites/flash-io/sections/Miscellaneous/CookieConsent.tsx": $$$$$$35,
+    "deco-sites/flash-io/sections/Miscellaneous/Slide.tsx": $$$$$$36,
+    "deco-sites/flash-io/sections/Newsletter/Newsletter.tsx": $$$$$$37,
+    "deco-sites/flash-io/sections/PartialImageGallery/PartialImageGallery.tsx":
+      $$$$$$38,
     "deco-sites/flash-io/sections/Product/ImageGalleryFrontBack.tsx": $$$$$$39,
     "deco-sites/flash-io/sections/Product/NotFound.tsx": $$$$$$40,
     "deco-sites/flash-io/sections/Product/NotFoundChallenge.tsx": $$$$$$41,
