@@ -67,7 +67,7 @@ export default function HeroFlats({
               }}
             >
             </div>
-            <p class="text-zinc-400 text-[16px] md:text-[18px] leading-[150%]">
+            <p class="text-base-content text-[16px] md:text-[18px] leading-[150%]">
               {description}
             </p>
             <div class="flex flex-col items-center lg:items-start lg:flex-row gap-4">
@@ -77,7 +77,7 @@ export default function HeroFlats({
                   id={item?.id}
                   href={item?.href}
                   target={item?.href.includes("http") ? "_blank" : "_self"}
-                  class={`group relative overflow-hidden rounded-full hover:bg-gradient-to-r px-6 py-2 lg:px-8 lg:py-3 transition-all duration-300 ease-out ${
+                  class={`group relative overflow-hidden rounded-xl hover:bg-gradient-to-r px-6 py-2 lg:px-8 lg:py-3 transition-all duration-300 ease-out ${
                     item.variant === "Reverse"
                       ? "bg-secondary text-white"
                       : "bg-accent text-black"

@@ -2,6 +2,7 @@
 // This file SHOULD be checked into source version control.
 // This file is automatically updated during development when running `dev.ts`.
 
+import * as $$$$$$$$$0 from "./actions/sendLikes.ts";
 import * as $$$$$$$$$$$0 from "./apps/decohub.ts";
 import * as $$$$$$$$$$$1 from "./apps/site.ts";
 import * as $$$3 from "./loaders/availableIcons.ts";
@@ -11,7 +12,9 @@ import * as $$$1 from "./loaders/Layouts/ProductCard.tsx";
 import * as $$$2 from "./loaders/List/Sections.tsx";
 import * as $$$5 from "./loaders/quotable.ts";
 import * as $$$6 from "./loaders/temperature.ts";
-import * as $$$7 from "./loaders/zenquotes.ts";
+import * as $$$7 from "./loaders/totalLikes.ts";
+import * as $$$8 from "./loaders/totalLikesProduct.ts";
+import * as $$$9 from "./loaders/zenquotes.ts";
 import * as $$$$$$0 from "./sections/Animation/Animation.tsx";
 import * as $$$$$$1 from "./sections/BannerList.tsx";
 import * as $$$$$$2 from "./sections/Cards/IconCardsCarousel.tsx";
@@ -74,7 +77,9 @@ const manifest = {
     "deco-sites/flash-io/loaders/List/Sections.tsx": $$$2,
     "deco-sites/flash-io/loaders/quotable.ts": $$$5,
     "deco-sites/flash-io/loaders/temperature.ts": $$$6,
-    "deco-sites/flash-io/loaders/zenquotes.ts": $$$7,
+    "deco-sites/flash-io/loaders/totalLikes.ts": $$$7,
+    "deco-sites/flash-io/loaders/totalLikesProduct.ts": $$$8,
+    "deco-sites/flash-io/loaders/zenquotes.ts": $$$9,
   },
   "sections": {
     "deco-sites/flash-io/sections/Animation/Animation.tsx": $$$$$$0,
@@ -133,6 +138,9 @@ const manifest = {
     "deco-sites/flash-io/sections/Social/WhatsApp.tsx": $$$$$$49,
     "deco-sites/flash-io/sections/Temperature/Temperature.tsx": $$$$$$50,
     "deco-sites/flash-io/sections/Theme/Theme.tsx": $$$$$$51,
+  },
+  "actions": {
+    "deco-sites/flash-io/actions/sendLikes.ts": $$$$$$$$$0,
   },
   "apps": {
     "deco-sites/flash-io/apps/decohub.ts": $$$$$$$$$$$0,

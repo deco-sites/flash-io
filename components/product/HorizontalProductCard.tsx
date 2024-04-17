@@ -4,6 +4,7 @@ import { SendEventOnClick } from "../../components/Analytics.tsx";
 import Avatar from "../../components/ui/Avatar.tsx";
 import WishlistButtonVtex from "../../islands/WishlistButton/vtex.tsx";
 import WishlistButtonWake from "../../islands/WishlistButton/vtex.tsx";
+import LikeButton from "../../islands/LikeButton.tsx";
 
 import { formatPrice } from "../../sdk/format.ts";
 import { useOffer } from "../../sdk/useOffer.ts";
@@ -18,6 +19,7 @@ export interface Layout {
     contentAlignment?: "Left" | "Center";
     oldPriceSize?: "Small" | "Normal";
     ctaText?: string;
+    animateImage?: boolean;
   };
   elementsPositions?: {
     skuSelector?: "Info" | "Price";
@@ -34,7 +36,6 @@ export interface Layout {
     favoriteIcon?: boolean;
   };
   onMouseOver?: {
-    image?: "Change image" | "Zoom image";
     card?: "None" | "Move up";
     showFavoriteIcon?: boolean;
     showSkuSelector?: boolean;
@@ -44,20 +45,12 @@ export interface Layout {
 }
 
 export interface Props {
-  // products: Product[] | null;
   product: Product;
-  /** Preload card image */
   preload?: boolean;
-
-  /** @description used for analytics event */
   itemListName?: string;
-
-  /** @description index of the product card in the list */
   index?: number;
-
   layout?: Layout;
   platform?: Platform;
-  // animateImage: boolean;
 }
 
 export function ErrorFallback({ error }: { error?: Error }) {
@@ -66,7 +59,7 @@ export function ErrorFallback({ error }: { error?: Error }) {
   return (
     <div class="flex lg:flex-row sm:flex-col items-center lg:card card-compact group w-full text-start duration-500 transition-translate ease-in-out lg:hover:-translate-y-2">
       <figure
-        class="relative overflow-hidden lg:mt-16"
+        class="relative overflow-hidden"
         style="aspect-ratio: 250 / 250;"
       >
         <a
@@ -158,7 +151,7 @@ export default function HorizontalProductCard({
   const hasVariant = isVariantOf?.hasVariant ?? [];
   const productGroupID = isVariantOf?.productGroupID;
   const description = product.description || isVariantOf?.description;
-  const [front, back] = images ?? [];
+  const [front] = images ?? [];
   const { listPrice, price, installments } = useOffer(offers);
   const possibilities = useVariantPossibilities(hasVariant, product);
   const variants = Object.entries(Object.values(possibilities)[0] ?? {});
@@ -195,18 +188,13 @@ export default function HorizontalProductCard({
       {l?.basics?.ctaText || "Ver produto"}
     </a>
   );
-  const skeleton = {
-    background:
-      "linear-gradient(to right, #eff1f3 4%, #e2e2e2 25%, #eff1f3 36%)",
-    backgroundSize: "1000px 100%",
-  };
 
   return (
     <div
       id={id}
-      class={`flex lg:flex-row sm:flex-col items-center lg:card card-compact group w-full ${
-        align === "center" ? "text-center" : "text-start"
-      } ${l?.onMouseOver?.showCardShadow ? "lg:hover:card-bordered" : ""}
+      class={`flex lg:flex-row items-center lg:card bg-neutral-content p-6 card-compact group w-full max-w-7xl 
+        ${align === "center" ? "text-center" : "text-start"} 
+        ${l?.onMouseOver?.showCardShadow ? "lg:hover:card-bordered" : ""}
         ${
         l?.onMouseOver?.card === "Move up" &&
         "duration-500 transition-translate ease-in-out lg:hover:-translate-y-2"
@@ -232,7 +220,7 @@ export default function HorizontalProductCard({
         }}
       />
       <figure
-        class="relative overflow-hidden lg:mt-16"
+        class="relative overflow-hidden"
         style={{ aspectRatio: `${WIDTH} / ${HEIGHT}` }}
       >
         {/* Product Images */}
@@ -246,29 +234,14 @@ export default function HorizontalProductCard({
             alt={front.alternateName}
             width={WIDTH}
             height={HEIGHT}
-            class={`bg-base-100 col-span-full row-span-full rounded ${
-              l?.onMouseOver?.image == "Zoom image"
-                ? "duration-100 transition-scale scale-100 lg:group-hover:scale-125"
-                : ""
+            class={`bg-base-100 col-span-full row-span-full rounded duration-300 ${
+              l?.basics?.animateImage ? "hover:scale-110" : ""
             }`}
             sizes="(max-width: 640px) 50vw, 20vw"
             preload={preload}
             loading={preload ? "eager" : "lazy"}
             decoding="async"
           />
-          {(!l?.onMouseOver?.image ||
-            l?.onMouseOver?.image == "Change image") && (
-            <Image
-              src={back?.url ?? front.url!}
-              alt={back?.alternateName ?? front.alternateName}
-              width={WIDTH}
-              height={HEIGHT}
-              class="bg-base-100 col-span-full row-span-full transition-opacity rounded opacity-0 lg:group-hover:opacity-100"
-              sizes="(max-width: 640px) 50vw, 20vw"
-              loading="lazy"
-              decoding="async"
-            />
-          )}
         </a>
         <figcaption
           class={`
@@ -287,7 +260,7 @@ export default function HorizontalProductCard({
           {l?.onMouseOver?.showCta && cta}
         </figcaption>
       </figure>
-      <div class="flex flex-grow lg:flex-row flex-col">
+      <div class="flex flex-grow lg:flex-row flex-col p-4">
         <div class="flex-auto flex flex-col p-2 gap-3 lg:gap-2 lg:w-1/2">
           {/* Prices & Name */}
           {l?.hide?.productName && l?.hide?.productDescription
@@ -312,7 +285,7 @@ export default function HorizontalProductCard({
                   )
                   : (
                     <div
-                      class="text-sm lg:text-sm"
+                      class="text-sm lg:text-sm line-clamp-1 md:line-clamp-3"
                       dangerouslySetInnerHTML={{ __html: description ?? "" }}
                     />
                   )}
@@ -346,12 +319,13 @@ export default function HorizontalProductCard({
             class={`absolute top-2 z-10 flex items-center
               ${
               l?.elementsPositions?.favoriteIcon === "Top left"
-                ? "left-2"
-                : "right-2"
+                ? "left-6"
+                : "right-6"
             }
               
             `}
           >
+            <LikeButton productID={productID} />
             <div
               class={`${l?.hide?.favoriteIcon ? "hidden" : "block"} ${
                 l?.onMouseOver?.showFavoriteIcon ? "lg:group-hover:block" : ""

@@ -6,6 +6,7 @@ import { color as wake } from "apps/wake/mod.ts";
 import { color as linx } from "apps/linx/mod.ts";
 import { color as nuvemshop } from "apps/nuvemshop/mod.ts";
 import { Section } from "deco/blocks/section.ts";
+import { Secret } from "apps/website/loaders/secret.ts";
 import type { App as A, AppContext as AC } from "deco/mod.ts";
 import { rgb24 } from "std/fmt/colors.ts";
 import manifest, { Manifest } from "../manifest.gen.ts";
@@ -17,6 +18,7 @@ export type Props = {
    * @default custom
    */
   platform: Platform;
+  secretLikes: Secret;
   theme?: Section;
 } & CommerceProps;
 
