@@ -9,9 +9,7 @@ import { total } from "../sdk/useTotalLikes.ts";
 
 import { useEffect } from "preact/hooks";
 import {
-  Flip,
   toast,
-  ToastContainer,
 } from "https://esm.sh/react-toastify@9.1.1?&external=react,react-dom&alias=react/jsx-runtime:preact/jsx-runtime&deps=preact@10.19.2&target=es2022";
 
 export interface Props {
@@ -22,9 +20,6 @@ export default function LikeButton({ productID }: Props) {
   const selected = useSignal(false);
   const quantity = useSignal(0);
   const id = useId();
-
-  // deno-lint-ignore no-explicit-any
-  const Toast = ToastContainer as any;
 
   useEffect(() => {
     const updateTotals = async () => {
@@ -50,16 +45,8 @@ export default function LikeButton({ productID }: Props) {
     total.value = result.total;
     quantity.value = result.product;
 
-    toast.success("Obrigado pelo voto!", {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
-      transition: Flip,
+    toast("Obrigado pelo seu voto", {
+      toastId: "likesToast",
     });
   };
 
@@ -67,7 +54,7 @@ export default function LikeButton({ productID }: Props) {
     <>
       <button
         id={id}
-        class="absolute left-4 sm:left-auto sm:right-4 top-4 flex items-center justify-center gap-1 p-1 sm:p-2 rounded bg-neutral sm:bg-white min-w-14"
+        class="left-4 sm:left-auto sm:right-4 top-4 flex items-center justify-center gap-1 p-1 sm:p-2 bg-neutral min-w-14"
         onClick={(e) => handleToggleLike(e)}
       >
         <SendEventOnClick
@@ -90,14 +77,12 @@ export default function LikeButton({ productID }: Props) {
           : <Icon id="MoodCheck" width={24} height={24} />}
         <span
           class={`min-w-4 text-center text-xs font-thin ${
-            !selected.value ? "text-gray-500" : "text-secondary"
+            !selected.value ? "text-gray-500" : "text-primary"
           }`}
         >
           {quantity.value}
         </span>
       </button>
-
-      <Toast />
     </>
   );
 }
