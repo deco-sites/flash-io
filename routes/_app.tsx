@@ -1,6 +1,7 @@
 import { asset, Head } from "$fresh/runtime.ts";
 import { defineApp } from "$fresh/server.ts";
 import { Context } from "deco/deco.ts";
+import Toast from "../islands/ToastContainer.tsx";
 import Theme from "../sections/Theme/Theme.tsx";
 
 const sw = () =>
@@ -29,7 +30,16 @@ export default defineApp(async (_req, ctx) => {
 
         {/* Web Manifest */}
         <link rel="manifest" href={asset("/site.webmanifest")} />
+
+        {/* Toastify CSS */}
+        <link
+          rel="stylesheet"
+          href="https://esm.sh/react-toastify@9.1.1/dist/ReactToastify.css"
+        />
       </Head>
+
+      {/* Toastify Container */}
+      <Toast />
 
       {/* Rest of Preact tree */}
       <ctx.Component />

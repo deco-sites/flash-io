@@ -43,7 +43,6 @@ export interface Layout {
     showCta?: boolean;
   };
 }
-
 export interface Props {
   product: Product;
   preload?: boolean;

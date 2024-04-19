@@ -16,7 +16,6 @@ export default async function totalLikesProduct(
       headers: {
         "Content-Type": "application/json",
         "x-api-key": String(ctx.secretLikes.get()),
-        // "x-api-key": 'flash-io',
       },
       credentials: "include",
     },

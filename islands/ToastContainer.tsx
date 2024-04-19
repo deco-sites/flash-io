@@ -1,10 +1,9 @@
-import {
-  ToastContainer,
-} from "https://esm.sh/react-toastify@9.1.1?&external=react,react-dom&alias=react/jsx-runtime:preact/jsx-runtime&deps=preact@10.19.2&target=es2022";
+import { FunctionalComponent } from "preact";
+import { ToastContainer } from "react-toastify";
 
-export default function ToastContainerComponent() {
-  // deno-lint-ignore no-explicit-any
-  const ToastContainerEl = ToastContainer as any;
+const Toast: FunctionalComponent = () => {
+  {/* @ts-expect-error Server Component */}
+  return <ToastContainer />;
+};
 
-  return <ToastContainerEl />;
-}
+export default Toast;

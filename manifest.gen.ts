@@ -5,6 +5,7 @@
 import * as $$$$$$$$$0 from "./actions/sendLikes.ts";
 import * as $$$$$$$$$$$0 from "./apps/decohub.ts";
 import * as $$$$$$$$$$$1 from "./apps/site.ts";
+import * as $$$$$$$$0 from "./flags/multivariate/productVariant.tsx";
 import * as $$$3 from "./loaders/availableIcons.ts";
 import * as $$$4 from "./loaders/icons.ts";
 import * as $$$0 from "./loaders/Layouts/HorizontalProductCard.tsx";
@@ -15,6 +16,7 @@ import * as $$$6 from "./loaders/temperature.ts";
 import * as $$$7 from "./loaders/totalLikes.ts";
 import * as $$$8 from "./loaders/totalLikesProduct.ts";
 import * as $$$9 from "./loaders/zenquotes.ts";
+import * as $$$$$$$0 from "./matchers/utm.ts";
 import * as $$$$$$0 from "./sections/Animation/Animation.tsx";
 import * as $$$$$$1 from "./sections/BannerList.tsx";
 import * as $$$$$$2 from "./sections/Cards/IconCardsCarousel.tsx";
@@ -138,6 +140,12 @@ const manifest = {
     "deco-sites/flash-io/sections/Social/WhatsApp.tsx": $$$$$$49,
     "deco-sites/flash-io/sections/Temperature/Temperature.tsx": $$$$$$50,
     "deco-sites/flash-io/sections/Theme/Theme.tsx": $$$$$$51,
+  },
+  "matchers": {
+    "deco-sites/flash-io/matchers/utm.ts": $$$$$$$0,
+  },
+  "flags": {
+    "deco-sites/flash-io/flags/multivariate/productVariant.tsx": $$$$$$$$0,
   },
   "actions": {
     "deco-sites/flash-io/actions/sendLikes.ts": $$$$$$$$$0,

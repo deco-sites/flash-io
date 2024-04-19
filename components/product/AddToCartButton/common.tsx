@@ -4,9 +4,7 @@ import Button from "../../../components/ui/Button.tsx";
 import { sendEvent } from "../../../sdk/analytics.tsx";
 import { useUI } from "../../../sdk/useUI.ts";
 
-import {
-  toast,
-} from "https://esm.sh/react-toastify@9.1.1?&external=react,react-dom&alias=react/jsx-runtime:preact/jsx-runtime&deps=preact@10.19.2&target=es2022";
+import { Flip, toast } from "react-toastify";
 
 export interface Props {
   /** @description: sku name */
@@ -21,6 +19,14 @@ const useAddToCart = ({ eventParams, onAddItem }: Props) => {
   const sendToast = (message: string) => {
     toast(message, {
       position: "bottom-left",
+      transition: Flip,
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
     });
   };
 

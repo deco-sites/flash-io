@@ -13,7 +13,6 @@ import { usePlatform } from "../../sdk/usePlatform.tsx";
 import type { Product } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import { clx } from "../../sdk/clx.ts";
-import { Head } from "$fresh/runtime.ts";
 
 export interface Props {
   products: Product[] | null;
@@ -51,9 +50,6 @@ export default function HorizontalProductShelf({
   };
   return (
     <>
-      <Head>
-        <link rel="stylesheet" href="/toastify/toastify.css" />
-      </Head>
       <div class="w-full container py-8 flex flex-col gap-6 lg:py-10">
         <Header
           title={title || ""}
