@@ -16,7 +16,6 @@ export default async function sendLikes(
     headers: {
       "Content-Type": "application/json",
       "x-api-key": String(ctx.secretLikes.get()),
-      //   "x-api-key": 'flash-io',
     },
     credentials: "include",
     body: JSON.stringify(data),
